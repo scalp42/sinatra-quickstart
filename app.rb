@@ -31,6 +31,12 @@ class App < Sinatra::Base
     redirect '/'
   end
 
+  get '/:id' do
+    @note = Note.get params[:id]
+    @title = "Edit note ##{params[:id]}"
+    haml :edit
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

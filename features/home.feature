@@ -12,3 +12,9 @@ Feature: Home page
     When I fill in "content" with "Remember the milk."
     And I press "Add TODO"
     Then I should see "Remember the milk."
+
+  Scenario: User clicks [edit] link
+    Given I am on the home page
+    When I follow "[edit]"
+    Then I should see "Edit note" within "title"
+    And I should see "Remember the milk." within "textarea"
