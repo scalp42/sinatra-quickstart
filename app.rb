@@ -1,8 +1,17 @@
+require 'sinatra'
 require 'sinatra/base'
 require 'data_mapper'
 require 'haml'
 
-DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/todo.db")
+configure :test do
+  @@db = "sqlite3://#{Dir.pwd}/todo_test.db"
+end
+
+configure :development, :production do
+  @@db = "sqlite3://#{Dir.pwd}/todo.db"
+end
+
+DataMapper::setup(:default, @@db)
 
 class Note
   include DataMapper::Resource
