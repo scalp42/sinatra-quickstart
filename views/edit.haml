@@ -3,7 +3,7 @@
     %input{:type => "hidden", :name => "_method", :value => "put"}
     %textarea{:name => "content"}= @note.content
     %input{:type => "checkbox", :name => "complete"}= "checked" if @note.complete
-    %input{:type => "submit"}
+    %input#submit{:type => "submit"}
   %p
     %a{:href => "/#{@note.id}/delete"} Delete
 - else

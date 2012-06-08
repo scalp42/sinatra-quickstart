@@ -5,3 +5,5 @@
 - http://net.tutsplus.com/tutorials/ruby/singing-with-sinatra-the-recall-app-2/
 
 - http://net.tutsplus.com/tutorials/ruby/singing-with-sinatra-the-encore/
+
+- http://www.humbug.in/docs/sinatra-book/the-put-and-delete-methods.html

@@ -16,6 +16,9 @@ end
 DataMapper.finalize.auto_upgrade!
 
 class App < Sinatra::Base
+
+  use Rack::MethodOverride
+
   get '/' do
     @notes = Note.all :order => :id.desc
     @title = 'All TODOs'
@@ -43,6 +46,12 @@ class App < Sinatra::Base
     n.complete = params[:complete] ? 1 : 0
     n.updated_at = Time.now
     n.save
+    redirect '/'
+  end
+
+  delete '/:id' do
+    n = Note.get params[:id]
+    n.destroy
     redirect '/'
   end
 
