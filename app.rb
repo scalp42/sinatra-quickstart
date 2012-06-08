@@ -37,6 +37,21 @@ class App < Sinatra::Base
     haml :edit
   end
 
+  put '/:id' do
+    n = Note.get params[:id]
+    n.content = params[:content]
+    n.complete = params[:complete] ? 1 : 0
+    n.updated_at = Time.now
+    n.save
+    redirect '/'
+  end
+
+  get '/:id/delete' do
+    @note = Note.get params[:id]
+    @title = "Confirm deletion of note ##{params[:id]}"
+    haml :delete
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

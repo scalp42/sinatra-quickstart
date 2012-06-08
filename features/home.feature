@@ -13,8 +13,14 @@ Feature: Home page
     And I press "Add TODO"
     Then I should see "Remember the milk."
 
-  Scenario: User clicks [edit] link
+  Scenario: User wants to edit a TODO
     Given I am on the home page
     When I follow "[edit]"
     Then I should see "Edit note" within "title"
     And I should see "Remember the milk." within "textarea"
+
+  Scenario: User wants to delete a TODO
+    Given I am on the home page
+    And I follow "[edit]"
+    When I follow "Delete"
+    Then I should see "Are you sure you want to delete the following note:"
