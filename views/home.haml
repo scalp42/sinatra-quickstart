@@ -2,5 +2,14 @@
   %form{:action => "/", :method => "post"}
     %textarea{:name => "content", :placeholder => "TODO here"}
     %input{:type => "submit", :value => "Add TODO"}
-%p
-  TODO: Display notes
+
+- @notes.each do |note|
+  %article{:class => note.complete? && "complete"}
+    %p
+      = note.content
+      %span
+        %a{:href => "/#{note.id}"} [edit]
+    %p{:class => "links"}
+      %a{:href => "/#{note.id}/complete"} &#8623;
+    %p{:class => "meta"}
+      = "Created: #{note.created_at}"
