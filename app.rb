@@ -22,6 +22,15 @@ class App < Sinatra::Base
     haml :home
   end
 
+  post '/' do
+    n = Note.new
+    n.content = params[:content]
+    n.created_at = Time.now
+    n.updated_at = Time.now
+    n.save
+    redirect '/'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
