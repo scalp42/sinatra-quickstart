@@ -13,6 +13,16 @@ Feature: Home page
     And I press "Add TODO"
     Then I should see "Remember the milk."
 
+  Scenario: User marks a TODO as done
+    Given I am on the home page
+    When I follow "done"
+    Then I should see "undone"
+
+  Scenario: User marks a TODO as undone
+    Given I am on the home page
+    When I follow "undone"
+    Then I should not see "undone"
+
   Scenario: User visits edit page
     Given I am on the home page
     When I follow "[edit]"

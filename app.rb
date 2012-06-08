@@ -70,6 +70,14 @@ class App < Sinatra::Base
     haml :delete
   end
 
+  get '/:id/complete' do
+    n = Note.get params[:id]
+    n.complete = n.complete ? 0 : 1 # flip it
+    n.updated_at = Time.now
+    n.save
+    redirect '/'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
