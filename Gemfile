@@ -1,7 +1,8 @@
 source :rubygems
 
 gem 'sqlite3'
-gem 'datamapper'
+gem 'data_mapper'
 gem 'dm-sqlite-adapter'
 gem 'sinatra'
+gem 'haml'
 gem 'shotgun'

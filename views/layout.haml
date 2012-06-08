@@ -1,0 +1,20 @@
+!!! 5
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf8"}
+    %title= "#{@title} | TODOs"
+    %link{:href => "/reset.css", :rel => "stylesheet"}
+    %link{:href => "/style.css", :rel => "stylesheet"}
+  %body
+    %header
+      %hgroup
+        %h1
+          %a{:href => "/"} TODOs
+        %h2 Get things done with this app.
+    #main
+      =yield
+    %footer
+      %p
+        %small
+          Sources From
+          %a{:href => "http://net.tutsplus.com"} Nettus+

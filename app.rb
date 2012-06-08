@@ -1,5 +1,6 @@
 require 'sinatra/base'
-require 'datamapper'
+require 'data_mapper'
+require 'haml'
 
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/todo.db")
 
@@ -16,7 +17,9 @@ DataMapper.finalize.auto_upgrade!
 
 class App < Sinatra::Base
   get '/' do
-    'Hello App!'
+    @notes = Note.all :order => :id.desc
+    @title = 'All TODOs'
+    haml :home
   end
 
   # start the server if ruby file executed directly
