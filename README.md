@@ -8,8 +8,12 @@
     
 - http://www.humbug.in/docs/sinatra-book/the-put-and-delete-methods.html 
      
-- http://haml.info/docs/yardoc/file.HAML_REFERENCE.html#attributes 
+- http://haml.info/
       
 - http://japhr.blogspot.kr/2009/03/proper-cucumber-sintatra-driving.html 
 
 - http://stackoverflow.com/questions/7541208/escape-html-in-markdown-in-haml
+
+- https://github.com/SFEley/sinatra-flash
+
+- https://github.com/vast/sinatra-redirect-with-flash
