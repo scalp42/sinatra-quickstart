@@ -17,3 +17,5 @@
 - https://github.com/SFEley/sinatra-flash
 
 - https://github.com/vast/sinatra-redirect-with-flash
+
+- http://stackoverflow.com/questions/8866411/deploy-a-simple-test-app-with-sinatra-datamapper-postgres-heroku-returns
