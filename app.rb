@@ -49,7 +49,7 @@ class App < Sinatra::Base
     @notes = Note.all :order => :id.desc
     @title = 'All TODOs'
     if @notes.empty?
-      flash.now[:error] = 'No TODOs found. Add your first below.'
+      flash[:error] = 'No TODOs found. Add your first below.'
     end
     haml :home
   end
