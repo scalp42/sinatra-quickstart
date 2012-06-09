@@ -12,3 +12,4 @@
       
 - http://japhr.blogspot.kr/2009/03/proper-cucumber-sintatra-driving.html 
 
+- http://stackoverflow.com/questions/7541208/escape-html-in-markdown-in-haml

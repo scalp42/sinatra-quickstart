@@ -6,7 +6,7 @@
 - @notes.each do |note|
   %article{:class => note.complete? && "complete"}
     %p
-      = note.content
+      =html_escape note.content
       %span
         %a{:href => "/#{note.id}"} [edit]
     %p{:class => "links"}
