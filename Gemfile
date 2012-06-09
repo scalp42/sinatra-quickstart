@@ -1,9 +1,9 @@
 source :rubygems
 
-gem 'sqlite3'
-gem 'pg'
 gem 'data_mapper'
+gem 'sqlite3', :group => :development
 gem 'dm-sqlite-adapter', :group => :development
+gem 'pg', :group => :production
 gem 'dm-postgres-adapter', :group => :production
 gem 'sinatra'
 gem 'sinatra-flash'
