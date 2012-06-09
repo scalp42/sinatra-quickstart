@@ -13,8 +13,12 @@ configure :test do
   @@db = "sqlite3://#{Dir.pwd}/todo_test.db"
 end
 
-configure :development, :production do
+configure :development do
   @@db = "sqlite3://#{Dir.pwd}/todo.db"
+end
+
+configure :production do
+  @@db = ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/todo.db"
 end
 
 DataMapper::setup(:default, @@db)
