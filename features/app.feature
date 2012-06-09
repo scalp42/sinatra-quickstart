@@ -48,3 +48,10 @@ Feature: Home page
     And I follow "Delete"
     When I press "Yes, delete it!"
     Then I should not see "Forget the milk."
+
+  Scenario: User writes a TODO message which includes HTML tags
+    Given I am on the home page
+    When I fill in "content" with "</article>woops <script>alert('zomg haxz');</script>"
+    And I press "Add TODO"
+    Then I should see "</article>woops <script>alert('zomg haxz');</script>"
+
