@@ -3,6 +3,9 @@ require 'sinatra/base'
 require 'data_mapper'
 require 'haml'
 
+SITE_TITLE = "TODOs"
+SITE_DESCRIPTION = "Get things done with this app."
+
 configure :test do
   @@db = "sqlite3://#{Dir.pwd}/todo_test.db"
 end

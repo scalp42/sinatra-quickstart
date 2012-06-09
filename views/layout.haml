@@ -2,15 +2,16 @@
 %html{:lang => "en"}
   %head
     %meta{:charset => "utf8"}
-    %title= "#{@title} | TODOs"
+    %title= "#{@title} | #{SITE_TITLE}"
     %link{:href => "/reset.css", :rel => "stylesheet"}
     %link{:href => "/style.css", :rel => "stylesheet"}
+    %link{:href => "/rss.xml", :rel => "alternate", :type => "application/rss+xml"}
   %body
     %header
       %hgroup
         %h1
-          %a{:href => "/"} TODOs
-        %h2 Get things done with this app.
+          %a{:href => "/"}= SITE_TITLE
+        %h2= SITE_DESCRIPTION
     #main
       =yield
     %footer
