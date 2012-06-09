@@ -28,6 +28,11 @@ class App < Sinatra::Base
 
   use Rack::MethodOverride
 
+  helpers do
+    include Haml::Helpers
+    alias_method :h, :html_escape
+  end
+
   get '/' do
     @notes = Note.all :order => :id.desc
     @title = 'All TODOs'
@@ -41,6 +46,11 @@ class App < Sinatra::Base
     n.updated_at = Time.now
     n.save
     redirect '/'
+  end
+
+  get '/rss.xml' do
+    @notes = Note.all :order => :id.desc
+    builder :rss
   end
 
   get '/:id' do

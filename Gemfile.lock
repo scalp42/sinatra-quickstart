@@ -116,6 +116,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  builder
   capybara
   cucumber
   data_mapper

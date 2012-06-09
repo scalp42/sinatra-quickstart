@@ -1,7 +1,7 @@
 - if @note
   %p
     Are you sure you want to delete the following note: 
-    %strong=html_escape @note.content
+    %strong=h @note.content
     ?
   %form{:action => "/#{@note.id}", :method => "post"}
     %input{:type => "hidden", :name => "_method", :value => "delete"}

@@ -1,7 +1,7 @@
 - if @note
   %form#edit{:action => "/#{@note.id}", :method => "post"}
     %input{:type => "hidden", :name => "_method", :value => "put"}
-    %textarea{:name => "content"}=html_escape @note.content
+    %textarea{:name => "content"}=h @note.content
     %input{:type => "checkbox", :name => "complete"}= "checked" if @note.complete
     %input#submit{:type => "submit"}
   %p
